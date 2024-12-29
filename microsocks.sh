@@ -10,7 +10,7 @@ sudo ufw allow 1080/tcp
 echo Allowing 1080/udp
 sudo ufw allow 1080/udp
 echo Enabling ufw service
-sudo ufw enable
+sudo ufw enable -y
 
 echo Creating system service /etc/systemd/system/microsocks.service
 sudo tee -a /etc/systemd/system/microsocks.service > /dev/null <<EOF
