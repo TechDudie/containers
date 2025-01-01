@@ -9,7 +9,7 @@ sudo ufw allow 1080/tcp
 echo Allowing 1080/udp
 sudo ufw allow 1080/udp
 echo Enabling ufw service
-sudo ufw enable -y
+sudo ufw --force enable
 
 echo Creating system service /etc/systemd/system/proxy.service
 sudo tee -a /etc/systemd/system/proxy.service > /dev/null <<EOF
@@ -28,6 +28,6 @@ WantedBy=multi-user.target
 EOF
 
 echo Enabling system service
-echo systemctl start proxy.service
+systemctl start proxy.service
 sudo systemctl enable proxy.service
 echo Done!
