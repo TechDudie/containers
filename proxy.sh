@@ -20,6 +20,7 @@ ExecStart=microsocks -p 24167
 WantedBy=multi-user.target
 EOF
 
-systemctl start proxy.service
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
 sudo systemctl enable proxy.service
-echo Done!
+sudo systemctl start proxy.service
