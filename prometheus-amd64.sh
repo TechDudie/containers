@@ -1,6 +1,7 @@
 sudo apt update
 sudo apt install ufw -y
 sudo ufw --force enable
+sudo ufw allow 22/tcp
 sudo ufw allow 9090/tcp
 sudo groupadd --system prometheus
 sudo useradd -s /sbin/nologin --system -g prometheus prometheus
